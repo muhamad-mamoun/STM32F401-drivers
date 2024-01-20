@@ -4,7 +4,7 @@ Author       : Mamoun
 Module       : GPIO
 File Name    : gpio.c
 Date Created : Dec 8, 2023
-Description  : Source file for the STM32F4xx GPIO peripheral driver.
+Description  : Source file for the STM32F401xx GPIO peripheral driver.
 =======================================================================================================================
 */
 
@@ -32,7 +32,7 @@ Description  : Source file for the STM32F4xx GPIO peripheral driver.
 void GPIO_init(void)
 {
     /* For Future Work. */
-    /* Goal: Set-up all the pins using static configurations during preprocessing stage. */
+    /* Goal: Configure all the pins using static configurations during preprocessing stage. */
 }
 
 /*=====================================================================================================================

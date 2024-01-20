@@ -4,7 +4,7 @@ Author       : Mamoun
 Module       : GPIO
 File Name    : gpio_cfg.h
 Date Created : Dec 8, 2023
-Description  : Configuration file for the STM32F4xx GPIO peripheral driver.
+Description  : Configuration file for the STM32F401xx GPIO peripheral driver.
 =======================================================================================================================
 */
 

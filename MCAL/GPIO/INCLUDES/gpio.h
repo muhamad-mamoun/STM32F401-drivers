@@ -4,7 +4,7 @@ Author       : Mamoun
 Module       : GPIO
 File Name    : gpio.h
 Date Created : Dec 8, 2023
-Description  : Interface file for the STM32F4xx GPIO peripheral driver.
+Description  : Interface file for the STM32F401xx GPIO peripheral driver.
 =======================================================================================================================
 */
 
