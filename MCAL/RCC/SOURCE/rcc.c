@@ -4,7 +4,7 @@ Author       : Mamoun
 Module       : RCC
 File Name    : rcc.c
 Date Created : Dec 4, 2023
-Description  : Source file for the STM32F401 RCC peripheral driver.
+Description  : Source file for the STM32F4xx RCC peripheral driver.
 =======================================================================================================================
 */
 

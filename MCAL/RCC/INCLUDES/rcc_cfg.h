@@ -4,7 +4,7 @@ Author       : Mamoun
 Module       : RCC
 File Name    : rcc_cfg.h
 Date Created : Dec 4, 2023
-Description  : Configuration file for the STM32F401 RCC peripheral driver.
+Description  : Configuration file for the STM32F4xx RCC peripheral driver.
 =======================================================================================================================
 */
 
