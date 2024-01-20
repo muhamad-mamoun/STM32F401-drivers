@@ -4,7 +4,7 @@ Author       : Mamoun
 Module       : RCC
 File Name    : rcc_prv.h
 Date Created : Dec 4, 2023
-Description  : Private file for the STM32F4xx RCC peripheral driver.
+Description  : Private file for the STM32F401xx RCC peripheral driver.
 =======================================================================================================================
 */
 
