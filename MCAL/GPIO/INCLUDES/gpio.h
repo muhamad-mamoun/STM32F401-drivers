@@ -150,6 +150,19 @@ GPIO_errorStatusType GPIO_configurePin(GPIO_pinConfigurationsType* a_ptr2configu
 GPIO_errorStatusType GPIO_writePin(GPIO_portIDType a_portID, GPIO_pinIDType a_pinID, GPIO_pinStatusType a_pinStatus);
 
 /*=====================================================================================================================
+ * [Function Name] : GPIO_writePinAtomic
+ * [Description]   : Write a specific logic [High or Low] on a specific pin [atomically].
+ * [Arguments]     : <a_portID>      -> Indicates to the required port ID.
+ *                   <a_pinID>       -> Indicates to the required pin ID.
+ *                   <a_pinStatus>   -> Indicates to the value [High - Low].
+ * [return]        : The function returns the error status: - No Errors.
+ *                                                          - Port ID Error.
+ *                                                          - Pin ID Error.
+ *                                                          - Pin Status Error.
+ ====================================================================================================================*/
+GPIO_errorStatusType GPIO_writePinAtomic(GPIO_portIDType a_portID, GPIO_pinIDType a_pinID, GPIO_pinStatusType a_pinStatus);
+
+/*=====================================================================================================================
  * [Function Name] : GPIO_writePort
  * [Description]   : Write a specific value on a certain port.
  * [Arguments]     : <a_portID>      -> Indicates to the required port ID.

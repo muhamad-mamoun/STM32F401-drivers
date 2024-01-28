@@ -154,6 +154,60 @@ GPIO_errorStatusType GPIO_writePin(GPIO_portIDType a_portID, GPIO_pinIDType a_pi
 }
 
 /*=====================================================================================================================
+ * [Function Name] : GPIO_writePinAtomic
+ * [Description]   : Write a specific logic [High or Low] on a specific pin [atomically].
+ * [Arguments]     : <a_portID>      -> Indicates to the required port ID.
+ *                   <a_pinID>       -> Indicates to the required pin ID.
+ *                   <a_pinStatus>   -> Indicates to the value [High - Low].
+ * [return]        : The function returns the error status: - No Errors.
+ *                                                          - Port ID Error.
+ *                                                          - Pin ID Error.
+ *                                                          - Pin Status Error.
+ ====================================================================================================================*/
+GPIO_errorStatusType GPIO_writePinAtomic(GPIO_portIDType a_portID, GPIO_pinIDType a_pinID, GPIO_pinStatusType a_pinStatus)
+{
+    GPIO_errorStatusType LOC_errorStatus = GPIO_NO_ERRORS;
+    GPIOx_registersType* LOC_ptr2GPIOx[GPIO_NUM_OF_PORTS] = {GPIOA,GPIOB,GPIOC,GPIOD,GPIOE,GPIOH};
+
+    if((a_portID < GPIO_PORTA_ID) || (a_portID > GPIO_PORTH_ID))
+    {
+        LOC_errorStatus = GPIO_PORT_ID_ERROR;
+    }
+
+    else if((a_pinID < GPIO_PIN00_ID) || (a_pinID > GPIO_PIN15_ID))
+    {
+        LOC_errorStatus = GPIO_PIN_ID_ERROR;
+    }
+
+    else if((a_pinStatus != GPIO_LOW_PIN) && (a_pinStatus != GPIO_HIGH_PIN))
+    {
+        LOC_errorStatus = GPIO_PIN_STATUS_ERROR;
+    }
+
+    else
+    {
+        switch (a_pinStatus)
+        {
+        case GPIO_HIGH_PIN:
+            /* Set the corresponding bit for this pin in the ODR register. */
+            (*(LOC_ptr2GPIOx + a_portID))->BSRR = (1 << a_pinID);
+            break;
+        
+        case GPIO_LOW_PIN:
+            /* Reset the corresponding bit for this pin in the ODR register. */
+            (*(LOC_ptr2GPIOx + a_portID))->BSRR = (1 << (a_pinID + GPIO_NUM_OF_PINS_PER_PORT));
+            break;
+        
+        default:
+            /* Do Nothing. */
+            break;
+        }
+    }
+
+    return LOC_errorStatus;
+}
+
+/*=====================================================================================================================
  * [Function Name] : GPIO_writePort
  * [Description]   : Write a specific value on a certain port.
  * [Arguments]     : <a_portID>      -> Indicates to the required port ID.
