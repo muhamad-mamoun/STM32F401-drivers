@@ -44,7 +44,14 @@ typedef struct
 /* The System Control Block (SCB) peripheral registers base addresss. */
 #define SCB                    ((volatile SCB_registersType*)0XE000ED00)
 
-#define SCB_AIRCR_PRIGROUP_FIELD                    (8UL)      /* The PRIGROUP field base bit number. */
-#define SCB_AIRCR_VECTKEY_FIELD                     (16UL)     /* The VECTKEY field base bit number.  */
+#define SCB_AIRCR_PRIGROUP_FIELD                    (8UL)      /* PRIGROUP field base bit number.          */
+#define SCB_AIRCR_VECTKEY_FIELD                     (16UL)     /* VECTKEY field base bit number.           */
+#define SCB_SHPR3_PENDSV_FIELD                      (16UL)     /* PendSV Priority field base bit number.   */
+#define SCB_SHPR3_SYSTICK_FIELD                     (24UL)     /* SysTick Priority field base bit number.  */
+
+#define SCB_ICSR_PENDSTCLR_BIT                      (25UL)     /* SysTick Clear Pending bit number.        */
+#define SCB_ICSR_PENDSTSET_BIT                      (26UL)     /* SysTick Set Pending bit number.          */
+#define SCB_ICSR_PENDSVCLR_BIT                      (27UL)     /* PendSV Clear Pending bit number.         */
+#define SCB_ICSR_PENDSVSET_BIT                      (28UL)     /* PendSV Set Pending bit number.           */
 
 #endif /* MCAL_SCB_INCLUDES_SCB_PRV_H_ */
